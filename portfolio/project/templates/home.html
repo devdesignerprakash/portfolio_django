@@ -1,0 +1,21 @@
+{% extends "common/base.html" %} 
+{% load static %}
+{% block title %}home{% endblock title %}
+{% block content %}
+<section id="hero" class="hero section">
+
+  <img src="{%static 'img/hero-bg.jpg'%}" alt="" data-aos="fade-in">
+
+  <div class="container text-center" data-aos="zoom-out" data-aos-delay="100">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h2>Prakash Neupane</h2>
+        <p>I'm a professional fullStack Developer</p>
+        <a href="about.html" class="btn-get-started">About Me</a>
+      </div>
+    </div>
+  </div>
+
+</section><!-- /Hero Section -->
+{% endblock content %}
+
