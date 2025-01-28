@@ -42,7 +42,7 @@
   <header id="header" class="header d-flex align-items-center light-background sticky-top">
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
 
-      <a href="" class="logo d-flex align-items-center me-auto me-xl-0">
+      <a href="{%url 'home'%}" class="logo d-flex align-items-center me-auto me-xl-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="img/logo.png" alt=""> -->
         <h1 class="sitename">Prakash Tech</h1>
@@ -50,7 +50,7 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="" class="active">Home</a></li>
+          <li><a href="{%url 'home'%}" class="active">Home</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
           <li><a href="{% url 'resume' %}">Resume</a></li>
           <li><a href="{% url 'services' %}">Services</a></li>
