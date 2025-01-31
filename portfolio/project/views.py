@@ -1,13 +1,16 @@
 from django.shortcuts import render,redirect
-
-import json
+from .models import Skill
 from django.contrib import messages
 from .models import ContactInquiry
 
 def home_view(request):
     return render(request,'home.html')
 def about_view(request):
-    return render(request,'about.html')
+    skills= Skill.objects.all()
+    context={
+        "skills":skills
+    }
+    return render(request,'about.html',context)
 
 def resume_view(request):
     return render(request,'resume.html')

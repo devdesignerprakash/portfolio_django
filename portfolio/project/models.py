@@ -6,18 +6,29 @@ class Skill(models.Model):
       proficiency=models.IntegerField(help_text="Proficiency out of 100")
       def __str__(self):
             return self.name
+
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
-    name = models.CharField(max_length=255, blank=True, null=True)
     profile_picture = models.ImageField(upload_to='profile_pictures/', null=True, blank=True)
     bio = models.TextField(max_length=500, blank=True)
     location = models.CharField(max_length=100, blank=True)
+    phone=models.CharField(max_length=60, blank=True)
     linkedin = models.URLField(blank=True)
+    website=models.URLField(blank=True)
     github = models.URLField(blank=True)
     facebook = models.URLField(blank=True)
+    city=models.CharField(max_length=50,blank=True)
     insta=models.URLField(blank=True)
     def __str__(self):
         return self.user.username
+    
+
+
+class Education(models.Model):
+     type=models.CharField(max_length=50,blank=True)
+     profile=models.OneToOneField(Profile, on_delete=models.CASCADE,related_name='education' )
+
+
 class ContactInquiry(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
